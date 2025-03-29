@@ -14,7 +14,6 @@ class EmployeeResource(resources.ModelResource):
         fields = ('first_name', 'last_name', 'email', 'phone_number', 'department', 'salary', 'hire_date', 'is_active')
 
     def before_import_row(self, row, **kwargs):
-        # Set default value for is_active if not present
         row['is_active'] = row.get('is_active', True)
 
 @admin.register(employee)
